@@ -1,0 +1,9 @@
+body { background: #f8fafc; }
+.card { box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+#senha-gerada { font-family: 'Fira Mono', monospace; }
+.progress { height: 1.5rem; }
+#barra-forca { font-size: 1rem; transition: width 0.4s; }
+@media (max-width: 767px) {
+  h1 { font-size: 1.5rem; }
+  .card-title { font-size: 1.1rem; }
+} 

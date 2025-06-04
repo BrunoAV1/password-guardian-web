@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Password Guardian Web</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container py-4">
+    <h1 class="mb-4 text-center">🔐 Password Guardian Web</h1>
+    <div class="row g-4">
+        <!-- Gerador de Senhas -->
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Gerador de Senhas Fortes</h4>
+                    <form id="form-gerar">
+                        <div class="mb-3">
+                            <label for="tamanho" class="form-label">Tamanho da senha</label>
+                            <input type="number" class="form-control" id="tamanho" name="tamanho" min="6" max="50" value="12" required>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="maiusculas" name="maiusculas" checked>
+                            <label class="form-check-label" for="maiusculas">Maiúsculas</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="minusculas" name="minusculas" checked>
+                            <label class="form-check-label" for="minusculas">Minúsculas</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="numeros" name="numeros" checked>
+                            <label class="form-check-label" for="numeros">Números</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="simbolos" name="simbolos" checked>
+                            <label class="form-check-label" for="simbolos">Símbolos</label>
+                        </div>
+                        <div class="mt-3 d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Gerar Senha</button>
+                        </div>
+                    </form>
+                    <div class="mt-3">
+                        <label for="senha-gerada" class="form-label">Senha Gerada</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="senha-gerada" readonly>
+                            <button class="btn btn-outline-secondary" type="button" id="btn-copiar">Copiar</button>
+                        </div>
+                        <div id="erro-gerar" class="text-danger mt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Avaliador de Força de Senha -->
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Avaliador de Força de Senha</h4>
+                    <form id="form-avaliar">
+                        <div class="mb-3">
+                            <label for="senha-avaliar" class="form-label">Digite uma senha</label>
+                            <input type="text" class="form-control" id="senha-avaliar" name="senha" autocomplete="off">
+                        </div>
+                    </form>
+                    <div class="mb-2">
+                        <div class="progress">
+                            <div id="barra-forca" class="progress-bar bg-danger" role="progressbar" style="width: 0%">0</div>
+                        </div>
+                    </div>
+                    <div id="mensagem-forca" class="fw-bold"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="mt-5 text-center text-muted">
+        <small>Desenvolvido por SeuNomeAqui • MIT License</small>
+    </footer>
+</div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/static/main.js"></script>
+</body>
+</html> 
